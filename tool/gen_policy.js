@@ -133,23 +133,32 @@ const String policyContact = ${dartStr(contact)};
 ${dartList('policyEn', en)}
 ${dartList('policyRur', rur)}`);
 
-const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const html = (list) => list.map(([t, b]) => {
-  const lines = b.split('\n');
-  let out = `<h2>${esc(t)}</h2>\n`;
+const esc = (x) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Body text -> <p> and <ul><li> (same look as the Kryvo privacy page).
+const body = (b) => {
+  let out = '';
   let inList = false;
-  for (const l of lines) {
+  for (const l of b.split('\n')) {
     if (l.startsWith('• ')) {
       if (!inList) { out += '<ul>\n'; inList = true; }
-      out += `<li>${esc(l.slice(2))}</li>\n`;
+      out += '  <li>' + esc(l.slice(2)) + '</li>\n';
     } else {
       if (inList) { out += '</ul>\n'; inList = false; }
-      if (l.trim()) out += `<p>${esc(l)}</p>\n`;
+      if (l.trim()) out += '<p>' + esc(l) + '</p>\n';
     }
   }
   if (inList) out += '</ul>\n';
   return out;
-}).join('');
+};
+
+// Entry 0 of "en" is the short version (shown in the box); the last entry is Contact.
+const inShort = 'ShieldPal has no account and no servers of its own. Your messages, notifications, app list and scan ' +
+  'results are checked on your phone and are never uploaded. A few optional online checks send one small piece of ' +
+  'data (for example a website name) only when you use them. No ads, no tracking, and we never sell or share your data.';
+const middle = en.slice(1, en.length - 1);
+const sections = middle.map(([t, b]) => '<h2>' + esc(t) + '</h2>\n' + body(b)).join('\n');
+const contactNo = en.length - 1;
 
 fs.mkdirSync('store', { recursive: true });
 fs.writeFileSync('store/privacy_policy.html',
@@ -158,20 +167,37 @@ fs.writeFileSync('store/privacy_policy.html',
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShieldPal — Privacy Policy</title>
+<title>ShieldPal Privacy Policy</title>
 <style>
-  body{font-family:system-ui,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px 18px 60px;line-height:1.6;color:#1b2140;background:#f6f8ff}
-  h1{margin-bottom:4px} h2{margin-top:30px;color:#3a5cff} .meta{color:#667}
-  li{margin:6px 0} hr{margin:40px 0;border:none;border-top:2px solid #d9e0ff}
+  :root { --bg:#ffffff; --fg:#1a2230; --muted:#5b6678; --accent:#2b64d6; --line:#e3e8f0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0b0f17; --fg:#e7edf5; --muted:#93a1b5; --accent:#4f8cff; --line:#243044; }
+  }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:19px; margin:32px 0 8px; border-top:1px solid var(--line); padding-top:20px; }
+  p, li { color:var(--fg); }
+  .muted { color:var(--muted); }
+  .box { border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  a { color:var(--accent); }
 </style>
 </head>
 <body>
-<h1>🐾🛡️ ShieldPal — Privacy Policy</h1>
-<p class="meta">Effective ${updated} · Faraz Labs (Usman Faraz) · <a href="mailto:${contact}">${contact}</a></p>
-${html(en)}
-<hr>
-<h1>Roman Urdu</h1>
-${html(rur)}
+<main>
+<h1>ShieldPal — Privacy Policy</h1>
+<p class="muted">Developer: Faraz Labs · Last updated: ${updated}</p>
+
+<div class="box">
+<strong>In short:</strong> ${esc(inShort)}
+</div>
+
+${sections}
+<h2>${contactNo}. Contact</h2>
+<p>Questions? Email <a href="mailto:${contact}">${contact}</a>
+or reach out on <a href="https://www.linkedin.com/in/usman-farazz">LinkedIn</a>.</p>
+</main>
 </body>
 </html>
 `);
