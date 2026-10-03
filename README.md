@@ -1,183 +1,119 @@
-<p align="center"><img src="docs/logo.png" width="140" alt="ShieldPal logo"></p>
+<p align="center"><img src="docs/img/logo.png" width="96" alt="ShieldPal logo"></p>
 
-<h1 align="center">ShieldPal 🐾🛡️</h1>
-<p align="center"><b>Your cute cyber guardian</b> — a security app with a pet that gets sick when your phone is in danger.</p>
-
-<p align="center">
-  <a href="https://usmanfarazz.github.io/shieldpal/"><img src="https://img.shields.io/badge/%E2%96%B6%20Live%20demo-usmanfarazz.github.io%2Fshieldpal-6A5CFF?style=for-the-badge" alt="Live demo"/></a>
-  <a href="https://usmanfarazz.github.io/shieldpal/privacy.html"><img src="https://img.shields.io/badge/Privacy-Policy-22C55E?style=for-the-badge" alt="Privacy policy"/></a>
-</p>
-
-<p align="center"><sub>The web demo runs the checks that work in a browser (links, messages, numbers, passwords, quiz, Pal AI). Live Guard, Deep Scan, Shield VPN and the notification features need the Android app.</sub></p>
+<h1 align="center">ShieldPal — Your cute cyber guardian</h1>
 
 <p align="center">
-<img src="docs/screenshots/en_home.png" width="200">
-<img src="docs/screenshots/en_link_result.png" width="200">
-<img src="docs/screenshots/rur_msg_result.png" width="200">
-<img src="docs/screenshots/en_scan.png" width="200">
+A <b>scam, fake-link and QR checker</b> for Android with <b>Live Guard</b>, <b>Deep Scan</b>, a safety <b>VPN</b> and a
+<b>friendly AI assistant</b> — plus a pet that gets sick when your phone is in danger.
+</p>
+
+<p align="center">
+<b>🌐 Website & live demo:</b> <a href="https://usmanfarazz.github.io/shieldpal/">usmanfarazz.github.io/shieldpal</a> ·
+<b>🔒 Privacy policy:</b> <a href="https://usmanfarazz.github.io/shieldpal/privacy.html">privacy.html</a>
+</p>
+
+<p align="center">
+<img src="docs/img/shots/01-home.jpg" width="200">
+<img src="docs/img/shots/02-link-check.jpg" width="200">
+<img src="docs/img/shots/03-message-check.jpg" width="200">
+<img src="docs/img/shots/04-deep-scan.jpg" width="200">
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/platform-Android-3ddc84" alt="Android">
+<img src="https://img.shields.io/badge/built%20with-Flutter-02569B" alt="Flutter">
+<img src="https://img.shields.io/badge/scanning-on--device-6a5cff" alt="On-device">
+<img src="https://img.shields.io/badge/ads-none-success" alt="No ads">
+<img src="https://img.shields.io/badge/languages-14-22c7e6" alt="14 languages">
 </p>
 
 ---
 
-## Roman Urdu mein khulasa
+## ✨ Try it
 
-ShieldPal ek **security app** hai jis mein ek pyaara pet "Pip" hai. Phone mehfooz ho to Pip khush rehta hai. Koi khatra aaye to Pip beemar ho jata hai, aur app **alarm, bolti warning aur notification** ke saath batata hai ke **kis app aur kis chat** mein khatarnak link ya scam aaya hai.
+The [live demo](https://usmanfarazz.github.io/shieldpal/) runs the real app in your browser. Skip the intro, open the
+**Shield** tab, then try **Link Check** with `http://garena-free-diamonds.top/claim` or **Message Check** with a scam SMS.
 
-App banane wala: **Usman Faraz**. Flutter (Dart) aur native Android (Kotlin) se bana hai, aur Android, iPhone, Windows, Mac, Linux aur Web par chalta hai.
+> 📱 Live Guard, Deep Scan, Shield VPN and the notification features need the Android app, which is coming soon to Google Play.
 
----
+## Why it's safe
 
-## ✨ Features
+- **No account, no servers of our own.** Messages, notifications, your app list and Deep Scan results are checked on your
+  phone and are never uploaded.
+- **Optional online checks send only a small piece of data** (for example a website name to Cloudflare), and only when you
+  use that feature. Every service is listed in Settings → *Online services & AI* with a **Test** button.
+- **Secrets are encrypted** — 2FA seeds, API keys and the app-lock PIN live in Android Keystore-backed storage.
+- **No ads, no analytics, no selling data.** *Delete all my data* erases everything in one tap.
 
-| | Feature | What it does | Platforms |
-|---|---|---|---|
-| 👁️ | **Live Guard** | Reads new notifications (WhatsApp, SMS, Telegram, Instagram, Gmail…) **on the phone**. When a scam message or dangerous link arrives it raises an alarm, speaks a warning and shows *which app and which chat* it came from — before you tap the link. Also warns when a risky app gets installed. | Android |
-| 🛰️ | **Deep Scan** | Screen lock & lock strength (detects weak patterns), security patch age, Android version, developer options, USB debugging, root, apps with accessibility / device-admin / notification access, third-party keyboards, apps allowed to install apps, Google Play Protect status **and Play Protect's list of harmful apps**, other VPNs, open Wi-Fi. Every risky app gets a one-tap **Remove** button. | Android (limited on others) |
-| 🔗 | **Link Check** | Offline analysis (look-alike brands like `ff-garena-…xyz`, typosquatting `g00gle`, punycode, raw IPs, `@` trick, risky TLDs, shorteners, bait words, APK downloads) + short-link expansion + **Google Safe Browsing** + **urlscan.io cloud sandbox** that opens the page far away and shows a screenshot. | All |
-| 🚧 | **Safe Link Gate** | Set ShieldPal as the default browser: every tapped link is checked first, safe links open in your real browser instantly. | Android |
-| 💬 | **Message Check** | Trained on-device AI (Naive Bayes, trains from `lib/core/scam_dataset.dart` on start-up) + multilingual rules (English, Roman Urdu, Urdu, Hindi, Arabic, Spanish, Portuguese, Indonesian, French, Turkish). Share any message to ShieldPal. | All |
-| 📷 | **Safe QR** | Decodes QR codes before anything opens: phishing URLs, open Wi-Fi, payment QRs (UPI/EMV), crypto addresses, premium SMS, 2FA setup, family invites. | Android, iOS, macOS, Web |
-| 📞 | **Number Check** | Country, number type (mobile / premium / VoIP…), original network (PK prefixes), wangiri & premium warnings, mark-as-scam. *Owner names and live location are private — no honest app can show them.* | All |
-| 🌐 | **Shield VPN** | On-device DNS filter (no server): blocks known malware/phishing domains in every app via Cloudflare 1.1.1.2 + ShieldPal rules. Doesn't hide your IP. | Android |
-| 🔐 | **2FA Vault** | Built-in authenticator (RFC 6238 TOTP, tested against the RFC vectors), add by QR or key, encrypted storage. | All |
-| 👨‍👩‍👧 | **Family Safe-Word** | Rotating 3-emoji code shared by QR — stops AI voice-clone "send money" calls. | All |
-| 🔑 | **Password Check** | Strength + crack time + **Have I Been Pwned** leak check (k-anonymity: only 5 hash chars leave the phone) + generator. | All |
-| 🎮 | **Scam or Safe?** | Swipe game with a timer, combos, coins. | All |
-| 🐱 | **Pet & rewards** | Mood from your real security score, daily streaks, coins, 20 outfits/skins, 10 achievements. | All |
-| ✨ | **Pal AI** | Chat assistant. Offline knowledge base in every language; with a Claude API key it uses **Claude** and answers in your language. | All |
-| 🔒 | **App lock** | PIN + fingerprint/face. | All |
-| 🌍 | **14 languages** | English, اردو, Roman Urdu, हिन्दी, العربية, বাংলা, Español, Français, Português, Bahasa Indonesia, Türkçe, Русский, Deutsch, 中文 (RTL supported). | All |
+> ⚠️ Shield VPN is a local safety VPN: it blocks dangerous websites and forwards everything else unchanged. It does **not**
+> hide your IP address or change your country. The registered owner of a phone number is private, so Number Check never shows it.
 
----
+## Features
 
-## 🚀 Android Studio mein kaise chalayein (Step by step)
+| | |
+|---|---|
+| 👁️ **Live Guard** | Reads new notifications (WhatsApp, SMS, Telegram…) **on the phone** and raises an alarm — with a spoken warning — for scam links and messages, showing which app and chat they came from. |
+| 🔗 **Link Check** | Look-alike brands, typosquatting, punycode, raw IPs, risky TLDs and bait words, plus short-link expansion and Cloudflare / Google Safe Browsing / urlscan.io checks. |
+| 💬 **Message Check** | An on-device Naive Bayes model plus multilingual rules; it learns from your corrections. Share any message to ShieldPal. |
+| 📷 **Safe QR** | Decodes a QR code before anything opens: phishing URLs, open Wi-Fi, payment QRs, crypto addresses, premium SMS. |
+| 🛰️ **Deep Scan** | Screen-lock strength, patch age, developer options, USB debugging, root, accessibility / admin / notification-access apps, Play Protect — each with a one-tap fix or Remove. |
+| 🌐 **Shield VPN** | A real on-device VPN that filters DNS (dangerous domains blocked), lets you pick the DNS server (Cloudflare, Google, Quad9, AdGuard, OpenDNS) and speeds lookups with a cache. |
+| 🌍 **Remote VPN** | Optional: run your own WireGuard config so all traffic leaves from another server. |
+| 📞 **Number Check** | Country, type, original network, wangiri / premium / VoIP warnings, and the name from your own contacts. |
+| 🔑 **Passwords & 2FA** | Strength + Have I Been Pwned leak check (k-anonymity), a built-in authenticator and a Family Safe-Word against voice-clone scams. |
+| ✨ **Pal AI** | Answers in the language you write in: offline knowledge base, optional free online AI, or your own Claude key. |
+| 🐾 **Pet & game** | Choose a cat, bunny, bear, puppy or fox, change its voice, play the endless "Scam or Safe?" game and unlock achievements. |
+| 🌍 **14 languages** | English, اردو, Roman Urdu, हिन्दी, العربية, বাংলা, Español, Français, Português, Bahasa Indonesia, Türkçe, Русский, Deutsch, 中文. |
 
-1. **Flutter install karein:** https://docs.flutter.dev/get-started/install
-2. **Android Studio** install karein, aur us mein **Flutter** aur **Dart** plugins daalein (Settings → Plugins).
-3. Is project ka folder unzip karein, phir Android Studio mein **File → Open → `shieldpal` folder** kholein.
-4. Terminal mein yeh chalayein:
-   ```bash
-   flutter pub get
-   flutter doctor        # check karein sab ✓ ho
-   ```
-5. Phone ko USB se lagayein (Developer options → USB debugging on), ya emulator chalayein.
-6. Upar ▶️ **Run** dabayein, ya terminal se:
-   ```bash
-   flutter run
-   ```
-7. APK banane ke liye:
-   ```bash
-   flutter build apk --release
-   # file: build/app/outputs/flutter-apk/app-release.apk
-   ```
+## Tech
 
-### Phone par pehli dafa
-- **Live Guard:** app mein Shield → Protection → Live Guard → *Turn on* → list mein **ShieldPal** ko allow karein.
-- **Notifications:** Android 13+ par "Allow notifications" ko haan karein.
-- **Shield VPN:** Protection → Shield VPN → *Turn on* → VPN request ko OK karein.
-- **Safe Link Gate:** Protection → Safe Link Gate → Default apps → Browser → ShieldPal.
-
-### Doosre platforms
-```bash
-flutter run -d chrome      # Web
-flutter run -d windows     # Windows laptop (Windows par chalayein)
-flutter run -d macos       # Mac (Mac par chalayein)
-flutter build ios          # iPhone (Mac + Xcode chahiye)
-```
-
----
-
-## 🔑 Optional API keys (Settings → Online services & AI)
-
-App bina kisi key ke bhi chalta hai. Keys daalne se yeh extra features khul jaate hain:
-
-| Key | Kahan se milegi | Kya karti hai |
-|---|---|---|
-| **Claude (Anthropic)** | https://console.anthropic.com | Pal AI ko samajhdar banati hai (model `claude-opus-5-5`, `fallbacks: "default"`) |
-| **Google Safe Browsing** | Google Cloud Console → enable *Safe Browsing API* → Credentials | Links ko Google ki khatarnak list se milati hai |
-| **urlscan.io** | https://urlscan.io/user/signup | Link ko cloud browser mein khol kar screenshot deti hai |
-
-> ⚠️ **Play Store se pehle:** keys user ke phone par encrypted rehti hain, jo personal use ke liye theek hai. Agar aap app public karte hain to apni keys app ke andar mat daalein. Ek chhota backend (jaise Cloudflare Worker) bana kar keys wahan rakhein. Google Safe Browsing Lookup API sirf non-commercial use ke liye hai; commercial app ke liye **Google Web Risk API** use karein.
-
----
-
-## 📦 Play Store checklist
-
-- [ ] Apni **upload key** banayein aur `android/app/build.gradle.kts` mein release `signingConfig` set karein ([guide](https://docs.flutter.dev/deployment/android#sign-the-app)).
-- [ ] **QUERY_ALL_PACKAGES** declaration form bharein. Wajah: "Security app that scans installed apps for malware/spyware".
-- [ ] **Notification listener** ke liye prominent disclosure aur privacy policy (`Settings → Privacy` ka text use karein). Aapki privacy policy page `usmanfarazz.github.io/kryvo/privacy.html` jaisi jagah host ho sakti hai.
-- [ ] **VpnService** declaration: "On-device DNS filter that blocks malicious domains; no traffic leaves to our servers".
-- [ ] **REQUEST_DELETE_PACKAGES**: "Lets users remove apps flagged as dangerous".
-- [ ] Data safety form: koi data collect nahi hota. Agar user ne keys di hon to links Google/urlscan ko aur chat Anthropic ko jaati hai.
-
----
-
-## 🧱 Project structure
+- **Flutter / Dart** UI and logic, with native **Kotlin** for Live Guard (`NotificationListenerService`), Shield VPN
+  (`VpnService` with a small user-space TCP/UDP forwarder and DNS filter), Deep Scan, alerts and contacts lookup.
+- Remote VPN uses the official [WireGuard tunnel library](https://github.com/WireGuard/wireguard-android).
+- Storage via [`flutter_secure_storage`](https://pub.dev/packages/flutter_secure_storage) (Android Keystore) and
+  `shared_preferences`; QR scanning with `mobile_scanner`; biometrics with `local_auth`.
+- Tested by 30+ unit and widget tests, including accuracy tests for the scam and fake-link detectors.
 
 ```
 lib/
-  core/            # all security logic (pure Dart, unit-tested)
-    url_analyzer.dart     link phishing heuristics
-    scam_engine.dart      on-device Naive Bayes + multilingual rules
-    scam_dataset.dart     training data (add more lines to make it smarter)
-    link_scanner.dart     short-link expand, Safe Browsing, urlscan sandbox
-    qr_analyzer.dart      quishing protection
-    phone_lookup.dart     number info & warnings
-    password_checker.dart strength + HIBP k-anonymity
-    totp.dart             RFC 6238 authenticator
-    family_code.dart      rotating emoji safe-word
-    assistant.dart        Pal AI (offline KB + Claude)
-    device_bridge.dart    Flutter ⇄ Android channel
-  screens/         # UI
-  widgets/pet_view.dart   the pet, drawn & animated in code (also renders the app icon)
-  l10n/            # 14 languages × 558 strings
-  state/app_state.dart
-android/app/src/main/kotlin/app/shieldpal/shieldpal/
-  ShieldNotificationListener.kt  Live Guard
-  DeviceAuditor.kt               Deep Scan
-  ShieldVpnService.kt            Shield VPN (DNS filter)
-  ScamHeuristics.kt              Kotlin twin of the scam rules (works when app is closed)
-  Alerts.kt                      alarm + voice + notification
-  MainActivity.kt                method channel, share & link handling
-tool/icon_gen_test.dart          regenerates the app icon from the pet painter
-test/                            unit + widget tests (all 14 languages)
+  core/       scam engine, link / QR / number analysers, Pal AI, tips, quiz generator
+  screens/    all app screens
+  state/      AppState (single ChangeNotifier)
+  l10n/       translations (14 languages)
+android/      Kotlin: Live Guard, Shield VPN, Deep Scan, alerts, WireGuard bridge
+site/         landing page + live demo (GitHub Pages)
+store/        Google Play listing, data-safety answers, graphics, privacy policy
+tool/         policy generator, icon generator, Pages deploy script
 ```
 
-Tests chalayein:
+## Build
+
 ```bash
-flutter analyze
+flutter pub get
 flutter test
+flutter run                      # run on a connected Android phone
+flutter build apk --release      # local test build
 ```
 
----
-
-## 🙏 Seedhi baat: app kya nahi kar sakta
-
-- **100% hacking detection** koi app nahi de sakta, Norton ya Google bhi nahi. Bahut advanced spyware (jaise Pegasus) aam apps se chhupa rehta hai. ShieldPal aam khatre pakadta hai: scam links, jasoos apps, kamzor settings aur khatarnak websites.
-- **"Virus delete"**: Android kisi app ko chupke se doosri app delete nahi karne deta. ShieldPal khatarnak app dhoondta hai aur ek tap mein "Remove" ka option deta hai, aur aap confirm karte hain.
-- **Number ka maalik ya location**: yeh private hai. Sirf police aur mobile company qanooni taur par trace kar sakti hai.
-- **Laptop hacking**: phone app laptop ko scan nahi kar sakta. ShieldPal ka desktop version link, message, QR, 2FA aur password tools deta hai.
-- **iPhone par** Live Guard, Deep Scan aur VPN nahi chalte, kyunki Apple apps ko doosri apps ki notifications parhne nahi deta.
-- **Shield VPN** aapka IP nahi chhupata. Yeh sirf khatarnak sites block karta hai. Agar phone par "Private DNS" strict mode on ho ya Chrome mein "Secure DNS" on ho, to woh is filter ko bypass kar sakte hain.
-
----
-
-Made with 💙 by Usman Faraz · Built with Flutter
-
-
----
-
-## Release / Google Play
-
-See [store/play_listing.md](store/play_listing.md) (listing text + checklist) and
-[store/data_safety_and_forms.md](store/data_safety_and_forms.md) (Data safety + permission declarations).
-The privacy policy is generated by `node tool/gen_policy.js`.
-
-Build for Play (uses android/upload-keystore.jks, keep it safe and never commit it):
+Release bundles for Google Play are signed with an upload key read from `android/key.properties`, which is **not** in this
+repository (see `.gitignore`):
 
 ```powershell
-$env:ORG_GRADLE_PROJECT_play="true"
-flutter build appbundle --release
+$env:ORG_GRADLE_PROJECT_play="true"; flutter build appbundle --release
 ```
 
-Local test builds (`flutter build apk --release`) stay debug-signed so they update the app already on your phone.
+Publish the website, live demo and privacy policy with `powershell -File tool\deploy_pages.ps1`.
+
+## Security notes / roadmap
+
+- Shield VPN covers IPv4 traffic; IPv6 is intentionally left unrouted so apps fall back to IPv4 instantly.
+- The free online AI is a third-party service: your chat text is sent to it only if you agree on first use, and you can turn it off.
+- iOS is not supported yet (Live Guard and the VPN filter are Android-specific).
+- Found a security issue? Please see [SECURITY.md](SECURITY.md).
+
+## Contact
+
+Made by **Usman Faraz** · Faraz Labs —
+[Email](mailto:usmanfaraz1818@gmail.com) · [LinkedIn](https://www.linkedin.com/in/usman-farazz)
+
+© 2026 Usman Faraz. All rights reserved.

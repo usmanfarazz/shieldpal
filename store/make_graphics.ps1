@@ -7,7 +7,7 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $raw = Join-Path $root 'raw'
 $out = Join-Path $root 'screenshots'
 New-Item -ItemType Directory -Force $out | Out-Null
-$logoPath = Join-Path (Split-Path -Parent $root) 'docs\logo.png'
+$logoPath = Join-Path (Split-Path -Parent $root) 'docs\img\logo.png'
 
 function C([int]$a, [int]$r, [int]$g, [int]$b) { [System.Drawing.Color]::FromArgb($a, $r, $g, $b) }
 

@@ -25,7 +25,7 @@ function Save-Resized($src, $dst, [int]$w, [int]$h, [bool]$jpg) {
   } else { $bmp.Save($dst, [System.Drawing.Imaging.ImageFormat]::Png) }
   $g.Dispose(); $bmp.Dispose(); $im.Dispose()
 }
-Save-Resized (Join-Path $root 'docs\logo.png') (Join-Path $img 'logo.png') 256 256 $false
+Save-Resized (Join-Path $root 'docs\img\logo.png') (Join-Path $img 'logo.png') 256 256 $false
 Save-Resized (Join-Path $root 'store\feature_graphic_1024x500.png') (Join-Path $img 'og.jpg') 1200 586 $true
 $names = '01_home','02_shield','03_link','04_message','05_deepscan','06_protection','07_pal_ai','08_pets'
 for ($i = 0; $i -lt 8; $i++) {

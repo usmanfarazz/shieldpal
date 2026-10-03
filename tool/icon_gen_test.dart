@@ -126,7 +126,7 @@ void main() {
     );
     await _render(tester, _logo(scale: 0.78, background: false), 'assets/icon/foreground.png');
     await _render(tester, Container(decoration: _bg), 'assets/icon/background.png');
-    await _render(tester, ClipRRect(borderRadius: BorderRadius.circular(224), child: _logo()), 'docs/logo.png', size: 1024);
+    await _render(tester, ClipRRect(borderRadius: BorderRadius.circular(224), child: _logo()), 'docs/img/logo.png', size: 1024);
 
     // Android launcher icons.
     const res = 'android/app/src/main/res';
