@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShieldPal — Your cute cyber guardian</title>
+<meta name="description" content="ShieldPal catches scam links, fake messages and risky QR codes before you tap. Live Guard, Deep Scan, Shield VPN and Pal AI with a pet that gets sick when your phone is unsafe. Offline-first, no ads, no tracking.">
+<meta property="og:title" content="ShieldPal — Your cute cyber guardian">
+<meta property="og:description" content="Scam link, message & QR checker with a cute pet. Offline-first, no ads, no tracking. 14 languages.">
+<meta property="og:image" content="https://usmanfarazz.github.io/shieldpal/img/og.jpg">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="img/logo.png">
+<style>
+  :root{--bg:#0b1020;--card:#131a33;--line:#222b4d;--text:#e8ecff;--mut:#9aa6d1;--a:#6a5cff;--b:#22c7e6;--ok:#22c55e}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+  .brand img{width:32px;height:32px;border-radius:9px}
+  nav a{margin-left:20px;color:var(--mut);text-decoration:none;font-size:14px}
+  nav a:hover{color:var(--text)}
+  .hero{padding:56px 0 30px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.08;margin:0 0 16px;font-weight:900;letter-spacing:-.02em}
+  h1 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--mut);font-size:18px;max-width:560px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+  .pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text)}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid var(--line);background:var(--card)}
+  .btn.p{background:linear-gradient(90deg,var(--a),var(--b));border:0;color:#fff}
+  .btn.off{opacity:.55;cursor:default}
+  .phonewrap{display:flex;flex-direction:column;align-items:center}
+  .phone{width:330px;height:680px;border-radius:46px;border:10px solid #0a0e1c;background:#000;box-shadow:0 30px 80px rgba(106,92,255,.35),0 0 0 2px #2a3566;position:relative;overflow:hidden}
+  .phone::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#0a0e1c;border-radius:14px;z-index:2}
+  .phone iframe{width:100%;height:100%;border:0;background:#0e1222}
+  .note{color:var(--mut);font-size:13px;text-align:center;max-width:340px;margin-top:14px}
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:30px 0}
+  .stats b{display:block;font-size:26px;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stats div{text-align:center;color:var(--mut);font-size:14px}
+  section{padding:46px 0}
+  h2{font-size:clamp(26px,3.5vw,38px);margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--mut);margin:0 0 28px;max-width:640px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+  .card .e{font-size:28px}.card h3{margin:8px 0 4px;font-size:17px}.card p{margin:0;color:var(--mut);font-size:14px}
+  .try{background:linear-gradient(135deg,rgba(106,92,255,.18),rgba(34,199,230,.12));border:1px solid var(--line);border-radius:22px;padding:24px}
+  .try h3{margin:0 0 6px}.try ol{color:var(--mut);padding-left:20px}
+  .samples{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:14px}
+  .sample{background:#0e1530;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13px;word-break:break-word}
+  .sample small{display:block;color:var(--mut);margin-bottom:4px}
+  .sample button{margin-top:8px;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:6px 12px;cursor:pointer;font-weight:600}
+  .shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+  .shots img{height:480px;border-radius:22px;border:1px solid var(--line);scroll-snap-align:start;flex:none}
+  .check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .check li{padding-left:28px;position:relative;color:var(--mut)}
+  .check li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+  footer a{margin-right:14px;text-decoration:none}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.phonewrap{order:2}nav a:not(.keep){display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#"><img src="img/logo.png" alt="ShieldPal logo">ShieldPal</a>
+  <nav>
+    <a class="keep" href="#demo">Live demo</a>
+    <a href="#features">Features</a>
+    <a href="#screens">Screenshots</a>
+    <a class="keep" href="privacy.html">Privacy</a>
+    <a class="keep" href="https://github.com/usmanfarazz/shieldpal">GitHub</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero" id="demo"><div class="wrap">
+  <div>
+    <h1>Your cute cyber guardian that <span>catches scams before you tap.</span></h1>
+    <p class="lead">ShieldPal checks links, messages, QR codes and your phone's security — and a little pet gets sick when you are in danger. Offline-first, in 14 languages.</p>
+    <div class="pills">
+      <span class="pill">🛡️ Live Guard</span><span class="pill">🔗 Fake-link detector</span><span class="pill">💬 On-device scam AI</span>
+      <span class="pill">🚫 No ads · no tracking</span><span class="pill">🌍 14 languages</span>
+    </div>
+    <div class="btns">
+      <a class="btn p" href="#try">Try the live demo →</a>
+      <a class="btn" href="privacy.html">Privacy policy</a>
+      <span class="btn off" title="Coming soon">Google Play — coming soon</span>
+    </div>
+  </div>
+  <div class="phonewrap">
+    <div class="phone"><iframe src="app/" title="ShieldPal live demo" loading="eager" allow="clipboard-read; clipboard-write"></iframe></div>
+    <p class="note">This is the real app running in your browser. Live Guard, Deep Scan and Shield VPN need the Android app.</p>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="stats">
+  <div><b>14</b>languages</div><div><b>0</b>ads &amp; trackers</div><div><b>100%</b>message checks on-device</div><div><b>Free</b>forever</div>
+</div></div>
+
+<section id="try"><div class="wrap">
+  <div class="try">
+    <h3>Try it in 20 seconds</h3>
+    <ol><li>Skip the intro in the phone above, then open the <b>Shield</b> tab.</li>
+        <li>Pick <b>Link Check</b> or <b>Message Check</b>, paste a sample below and press the button.</li></ol>
+    <div class="samples">
+      <div class="sample"><small>Fake game link</small><span id="s1">http://garena-free-diamonds.top/claim</span><br><button data-c="s1">Copy</button></div>
+      <div class="sample"><small>Scam SMS (Roman Urdu)</small><span id="s2">BISP: Aap ke 25000 rupay aa gaye hain. Wusooli ke liye apna CNIC aur OTP bhejein. jazzcash-kyc.online</span><br><button data-c="s2">Copy</button></div>
+      <div class="sample"><small>Real bank notice (safe)</small><span id="s3">Your OTP is 551203 for login. Never share this code with anyone, including HBL staff.</span><br><button data-c="s3">Copy</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <h2>Everything you need to stay safe</h2>
+  <p class="sub">One friendly app instead of five tools. Everything runs on your phone unless you choose an optional online check.</p>
+  <div class="grid">
+    <div class="card"><div class="e">👁️</div><h3>Live Guard</h3><p>Spots scam links and messages in WhatsApp, SMS and Telegram notifications — before you open them.</p></div>
+    <div class="card"><div class="e">🔗</div><h3>Link Check</h3><p>Fake-brand, look-alike and bait-word detection plus Cloudflare / Google cloud checks and short-link expansion.</p></div>
+    <div class="card"><div class="e">💬</div><h3>Message Check</h3><p>An on-device AI trained on real scam patterns in many languages. Teach it your corrections.</p></div>
+    <div class="card"><div class="e">📷</div><h3>Safe QR</h3><p>Reads a QR code first: phishing links, open Wi-Fi, payment QRs and crypto addresses.</p></div>
+    <div class="card"><div class="e">🛰️</div><h3>Deep Scan</h3><p>Weak screen lock, old patches, spy-app powers, risky apps — each with a one-tap fix or Remove.</p></div>
+    <div class="card"><div class="e">🌐</div><h3>Shield VPN</h3><p>A local safety VPN that blocks dangerous websites and lets you choose the DNS server. Optional WireGuard remote VPN.</p></div>
+    <div class="card"><div class="e">📞</div><h3>Number Check</h3><p>Country, type, network and warning signs of a number, plus the name from your own contacts.</p></div>
+    <div class="card"><div class="e">🔐</div><h3>Passwords &amp; 2FA</h3><p>Strength + safe leak check, a built-in authenticator and a family safe-word against voice-clone scams.</p></div>
+    <div class="card"><div class="e">✨</div><h3>Pal AI</h3><p>A friendly assistant that answers in the language you write in, offline or online.</p></div>
+    <div class="card"><div class="e">🐾</div><h3>Pet &amp; game</h3><p>Pick a cat, bunny, bear, puppy or fox. Play the endless “Scam or Safe?” game and collect outfits.</p></div>
+  </div>
+</div></section>
+
+<section id="screens"><div class="wrap">
+  <h2>Screenshots</h2>
+  <p class="sub">Real screens from a real phone.</p>
+  <div class="shots">
+    <img src="img/shot1.jpg" alt="Home" loading="lazy"><img src="img/shot2.jpg" alt="Tools" loading="lazy"><img src="img/shot3.jpg" alt="Link Check" loading="lazy">
+    <img src="img/shot4.jpg" alt="Message Check" loading="lazy"><img src="img/shot5.jpg" alt="Deep Scan" loading="lazy"><img src="img/shot6.jpg" alt="Protection" loading="lazy">
+    <img src="img/shot7.jpg" alt="Pal AI" loading="lazy"><img src="img/shot8.jpg" alt="Pets" loading="lazy">
+  </div>
+</div></section>
+
+<section id="privacy"><div class="wrap">
+  <h2>Privacy first</h2>
+  <p class="sub">ShieldPal has no account and no servers of its own.</p>
+  <ul class="check">
+    <li>Messages, notifications, app lists and Deep Scan results are checked on your phone and never uploaded.</li>
+    <li>Optional online checks send only a small piece (for example a website name) and only when you use them.</li>
+    <li>2FA secrets, keys and your PIN are encrypted with the Android Keystore.</li>
+    <li>No ads, no analytics, no selling data. “Delete all my data” erases everything in one tap.</li>
+  </ul>
+  <p><a class="btn" href="privacy.html">Read the full privacy policy</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>© ShieldPal · Faraz Labs — made by Usman Faraz</div>
+  <div><a href="https://github.com/usmanfarazz/shieldpal">GitHub</a><a href="https://www.linkedin.com/in/usman-farazz">LinkedIn</a><a href="mailto:usmanfaraz1818@gmail.com">Contact</a><a href="privacy.html">Privacy</a></div>
+</div></footer>
+
+<script>
+  document.querySelectorAll('button[data-c]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.dataset.c).textContent;
+      var done = function () { b.textContent = 'Copied ✓'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, done); else done();
+    });
+  });
+</script>
+</body>
+</html>

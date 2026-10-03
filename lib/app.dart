@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -71,6 +72,7 @@ class _ShieldPalAppState extends State<ShieldPalApp> with WidgetsBindingObserver
       debugShowCheckedModeBanner: false,
       theme: _theme(Brightness.light),
       darkTheme: _theme(Brightness.dark),
+      themeMode: kIsWeb && Uri.base.queryParameters['theme'] == 'dark' ? ThemeMode.dark : ThemeMode.system,
       locale: lang.materialLocale,
       supportedLocales: appLanguages.map((l) => l.materialLocale).toSet().toList(),
       localizationsDelegates: const [

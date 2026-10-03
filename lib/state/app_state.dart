@@ -131,6 +131,11 @@ class AppState extends ChangeNotifier {
     } else {
       lang = systemLang;
     }
+    // Web demo (landing page): ?demo=1 opens the app directly, without the first-run screens.
+    if (kIsWeb && Uri.base.queryParameters['demo'] == '1' && !onboarded) {
+      onboarded = true;
+      petName = 'Pip';
+    }
     L10n.current = language;
     locked = appLock;
   }
