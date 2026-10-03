@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShieldPal — Privacy Policy</title>
+<style>
+  body{font-family:system-ui,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px 18px 60px;line-height:1.6;color:#1b2140;background:#f6f8ff}
+  h1{margin-bottom:4px} h2{margin-top:30px;color:#3a5cff} .meta{color:#667}
+  li{margin:6px 0} hr{margin:40px 0;border:none;border-top:2px solid #d9e0ff}
+</style>
+</head>
+<body>
+<h1>🐾🛡️ ShieldPal — Privacy Policy</h1>
+<p class="meta">Effective 3 October 2026 · Faraz Labs (Usman Faraz) · <a href="mailto:usmanfaraz1818@gmail.com">usmanfaraz1818@gmail.com</a></p>
+<h2>The short version</h2>
+<ul>
+<li>ShieldPal has no account, no login and no servers of its own. We do not collect, store or sell your personal data.</li>
+<li>Messages, notifications, your list of apps, contacts and Deep Scan results are analysed ON YOUR PHONE and stay there.</li>
+<li>A few optional features send a small piece of data to a third-party service, only when you use them. They are all listed in section 3.</li>
+<li>No ads. No tracking or analytics. We never sell or share your data.</li>
+</ul>
+<h2>1. What stays on your phone</h2>
+<ul>
+<li>Live Guard reads the text of new notifications (WhatsApp, SMS, Telegram…) to look for scam links and messages. The check happens on the device. If something dangerous is found, a short snippet plus the app and chat name are saved in your Threat Log on the phone. Nothing is uploaded.</li>
+<li>Message Check, the scam-detecting AI model, Number Check, Safe QR (camera pictures never leave the phone), Password strength, Family Safe-Word, the pet, coins and settings all work on the device.</li>
+<li>2FA Vault secrets, API keys you add and your app-lock PIN are stored encrypted (Android Keystore). The PIN is stored only as a hash.</li>
+<li>Deep Scan reads your installed apps, their permissions and your phone's security settings on the device. The result is never uploaded.</li>
+<li>Contacts (optional): if you allow it, ShieldPal looks up the name you saved for a number you are checking. This happens on the phone; contacts are never uploaded or stored by ShieldPal.</li>
+</ul>
+<h2>2. Account and identity</h2>
+<p>ShieldPal needs no sign-up. We do not know who you are, and we do not collect your name, e-mail, phone number, location or advertising ID.</p>
+<h2>3. What can leave your phone (optional)</h2>
+<p>Only when you use the feature. Everything is sent over HTTPS.</p>
+<ul>
+<li>Link Check · Cloudflare Security DNS: the domain name of the link (for example "example.com"), never the full address or any personal detail. You can switch this off in Settings → Online services &amp; AI.</li>
+<li>Link Check · Google Safe Browsing (only if you add your own key): the link address.</li>
+<li>Link Check · urlscan.io cloud browser (only if you add your own key and switch it on): the link address. urlscan.io opens the page far away from your phone and keeps the scan unlisted.</li>
+<li>Password Check · Have I Been Pwned: only the first 5 characters of the password's SHA-1 fingerprint (k-anonymity). Never the password itself.</li>
+<li>Pal AI · Free online AI (pollinations.ai): the text of your chat with Pal AI, only after you agree to it. Do not type passwords or codes into the chat. Turn it off any time in Settings; Pal AI also works fully offline.</li>
+<li>Pal AI · Claude by Anthropic (only if you add your own key): your chat messages, sent with your own key. Anthropic's privacy policy applies.</li>
+<li>Shield VPN: this is a local VPN on your phone. It does not send your traffic to ShieldPal or to any VPN server. Only your device's DNS lookups (the domain names your apps ask for) go to the DNS provider you choose in the app (Cloudflare, Google, Quad9, AdGuard or OpenDNS) — the same kind of lookups your phone normally sends to your mobile network. It does not hide your IP address.</li>
+<li>Remote VPN (optional): runs a WireGuard config that YOU paste. All your traffic then goes to the VPN server named in that config, so that provider can see it. ShieldPal stores the config encrypted on your phone only and never sends it anywhere else.</li>
+<li>Check my IP (optional button): asks ipwho.is for your public IP and country.</li>
+<li>Spoken warnings use the Android text-to-speech engine on your phone.</li>
+</ul>
+<p>These services have their own privacy policies. ShieldPal gets none of this data.</p>
+<h2>4. Permissions and why we ask</h2>
+<ul>
+<li>Internet — the optional online checks above.</li>
+<li>Notifications — to show threat alerts.</li>
+<li>Notification access — Live Guard (reading notifications on the device to find scams). You turn it on yourself in Android settings and can turn it off any time.</li>
+<li>Installed apps list (QUERY_ALL_PACKAGES) — Deep Scan and new-app warnings. The list stays on the device.</li>
+<li>Request delete packages — the one-tap "Remove" button for dangerous apps (you still confirm).</li>
+<li>Screen-lock strength — to tell you if your lock is weak (never your PIN).</li>
+<li>Camera — Safe QR scanner. Pictures are not saved or uploaded.</li>
+<li>Biometrics — fingerprint / face unlock for the app lock.</li>
+<li>Contacts (optional) — to show the saved name of a number.</li>
+<li>VPN service — the local DNS filter (Shield VPN). You approve the Android VPN dialog yourself.</li>
+</ul>
+<h2>5. Security</h2>
+<p>Online requests use HTTPS. Secrets are encrypted with the Android Keystore. The PIN is hashed. The app lock can use your fingerprint or face. ShieldPal does not back up its data to the cloud (allowBackup is off).</p>
+<h2>6. Children and teens</h2>
+<p>ShieldPal is made for everyone, including teenagers and families. It does not create accounts and does not knowingly collect personal data from anyone, including children under 13.</p>
+<h2>7. Your choices and deleting your data</h2>
+<ul>
+<li>Settings → Privacy → "Delete all my data" erases everything ShieldPal stores on your phone: settings, threat log, 2FA codes, keys, PIN and pet progress.</li>
+<li>Uninstalling the app also removes all of it.</li>
+<li>You can revoke any permission or turn off Live Guard and Shield VPN in Android settings at any time.</li>
+<li>We hold no data about you on any server, so there is nothing to request from us. For data held by a third-party service, contact that service.</li>
+</ul>
+<h2>8. Changes to this policy</h2>
+<p>If features change, we update this policy here and in the app, and change the date above.</p>
+<h2>9. Contact</h2>
+<p>Faraz Labs — Usman Faraz</p>
+<p>E-mail: usmanfaraz1818@gmail.com</p>
+
+<hr>
+<h1>Roman Urdu</h1>
+<h2>Mukhtasir baat</h2>
+<ul>
+<li>ShieldPal mein koi account, login ya apna server nahi hai. Hum aapka zaati data na jama karte hain, na bechte hain.</li>
+<li>Messages, notifications, apps ki list, contacts aur Deep Scan ke nateeje AAPKE PHONE PAR check hote hain aur wahin rehte hain.</li>
+<li>Chand optional features sirf tab, jab aap unhein istemal karein, kisi doosri service ko thora sa data bhejte hain. Sab section 3 mein likha hai.</li>
+<li>Koi ads nahi. Koi tracking ya analytics nahi. Data kabhi becha ya share nahi hota.</li>
+</ul>
+<h2>1. Kya phone par rehta hai</h2>
+<ul>
+<li>Live Guard nayi notifications (WhatsApp, SMS, Telegram…) ka text scam links aur messages dhoondne ke liye parhta hai. Check phone par hi hota hai. Agar kuch khatarnak mile to chhota sa hissa aur app/chat ka naam phone ke Threat Log mein save hota hai. Kuch upload nahi hota.</li>
+<li>Message Check, scam pehchanne wala AI model, Number Check, Safe QR (camera ki tasveer phone se bahar nahi jati), Password strength, Family Safe-Word, pet, coins aur settings sab phone par chalte hain.</li>
+<li>2FA Vault ke secrets, jo API keys aap daalein aur app-lock PIN encrypted (Android Keystore) store hote hain. PIN sirf hash ki surat mein rakha jata hai.</li>
+<li>Deep Scan installed apps, unki permissions aur phone ki security settings device par hi parhta hai. Nateeja kabhi upload nahi hota.</li>
+<li>Contacts (optional): ijazat dein to ShieldPal check kiye ja rahe number ka aapke contacts mein save naam dhoondta hai. Yeh phone par hota hai; contacts upload ya store nahi hote.</li>
+</ul>
+<h2>2. Account aur pehchan</h2>
+<p>ShieldPal ko sign-up nahi chahiye. Hum nahi jaante aap kaun hain, aur hum aapka naam, e-mail, phone number, location ya advertising ID jama nahi karte.</p>
+<h2>3. Kya phone se bahar ja sakta hai (optional)</h2>
+<p>Sirf tab jab aap woh feature istemal karein. Sab kuch HTTPS par jata hai.</p>
+<ul>
+<li>Link Check · Cloudflare Security DNS: link ka sirf domain naam (jaise "example.com"), poora address ya koi zaati cheez nahi. Settings → Online services &amp; AI mein band kar sakte hain.</li>
+<li>Link Check · Google Safe Browsing (sirf agar aap apni key daalein): link ka address.</li>
+<li>Link Check · urlscan.io cloud browser (sirf agar apni key daalein aur on karein): link ka address. urlscan.io page ko aapke phone se door kholta hai aur scan unlisted rakhta hai.</li>
+<li>Password Check · Have I Been Pwned: password ke SHA-1 fingerprint ke sirf pehle 5 huroof (k-anonymity). Password khud kabhi nahi.</li>
+<li>Pal AI · Free online AI (pollinations.ai): Pal AI ke saath aapki chat ka text, sirf aapki ijazat ke baad. Chat mein password ya code mat likhein. Settings mein kabhi bhi band karein; Pal AI offline bhi chalta hai.</li>
+<li>Pal AI · Claude (Anthropic) (sirf agar apni key daalein): aapke chat messages, aapki apni key ke saath. Anthropic ki privacy policy lagu hoti hai.</li>
+<li>Shield VPN: yeh phone par local VPN hai. Yeh aapka traffic ShieldPal ya kisi VPN server ko nahi bhejta. Sirf aapke device ke DNS lookups (apps jo domain naam poochti hain) us DNS provider ko jate hain jo aap chunein (Cloudflare, Google, Quad9, AdGuard ya OpenDNS) — bilkul waise hi jaise phone normally apne network ko bhejta hai. Yeh aapka IP address nahi chhupata.</li>
+<li>Remote VPN (optional): woh WireGuard config chalata hai jo AAP paste karein. Phir aapka sara traffic us config ke VPN server par jata hai, is liye wo provider use dekh sakta hai. ShieldPal config sirf aapke phone par encrypted rakhta hai aur kahin nahi bhejta.</li>
+<li>Mera IP dekhein (optional button): ipwho.is se aapka public IP aur mulk poochta hai.</li>
+<li>Bolti warnings Android ka text-to-speech engine phone par istemal karti hain.</li>
+</ul>
+<p>In services ki apni privacy policies hain. ShieldPal ko in mein se kuch bhi data nahi milta.</p>
+<h2>4. Permissions aur kyun</h2>
+<ul>
+<li>Internet — upar likhe optional online checks.</li>
+<li>Notifications — khatre ke alerts dikhane ke liye.</li>
+<li>Notification access — Live Guard (scam dhoondne ke liye notifications device par parhna). Aap Android settings mein khud on karte hain aur kabhi bhi band kar sakte hain.</li>
+<li>Installed apps ki list (QUERY_ALL_PACKAGES) — Deep Scan aur nayi app ki warning. List device par rehti hai.</li>
+<li>Delete packages — khatarnak app ke liye ek-tap "Remove" button (confirm aap hi karte hain).</li>
+<li>Screen-lock ki mazbooti — batane ke liye ke lock kamzor to nahi (PIN kabhi nahi).</li>
+<li>Camera — Safe QR scanner. Tasveerein save ya upload nahi hoti.</li>
+<li>Biometrics — app lock ke liye fingerprint / face.</li>
+<li>Contacts (optional) — number ka save naam dikhane ke liye.</li>
+<li>VPN service — local DNS filter (Shield VPN). Android ka VPN dialog aap khud approve karte hain.</li>
+</ul>
+<h2>5. Hifazat</h2>
+<p>Online requests HTTPS istemal karti hain. Secrets Android Keystore se encrypted hain. PIN hash hota hai. App lock fingerprint ya face se khul sakta hai. ShieldPal apna data cloud par backup nahi karta (allowBackup band hai).</p>
+<h2>6. Bachay aur teenagers</h2>
+<p>ShieldPal sab ke liye hai, teenagers aur families samet. Yeh account nahi banata aur jaan boojh kar kisi se, 13 saal se kam umar ke bachon samet, zaati data jama nahi karta.</p>
+<h2>7. Aapke ikhtiyarat aur data delete karna</h2>
+<ul>
+<li>Settings → Privacy → "Delete all my data" ShieldPal ka phone par save har cheez mita deta hai: settings, threat log, 2FA codes, keys, PIN aur pet ki progress.</li>
+<li>App uninstall karne se bhi sab kuch hat jata hai.</li>
+<li>Aap Android settings mein kabhi bhi koi permission wapas le sakte hain ya Live Guard aur Shield VPN band kar sakte hain.</li>
+<li>Hamare paas aapka koi data kisi server par nahi hota, is liye hum se kuch mangwane ki zaroorat nahi. Kisi doosri service ke paas jo data ho, uske liye usi service se rabta karein.</li>
+</ul>
+<h2>8. Policy mein tabdeeli</h2>
+<p>Agar features badlein to hum yeh policy yahan aur app mein update karte hain aur upar ki tareekh badal dete hain.</p>
+<h2>9. Rabta</h2>
+<p>Faraz Labs — Usman Faraz</p>
+<p>E-mail: usmanfaraz1818@gmail.com</p>
+
+</body>
+</html>
