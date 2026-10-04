@@ -14,7 +14,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sections = (L10n.current.code == 'rur' || L10n.current.code == 'ur') ? policyRur : policyEn;
+    final sections = policyEn; // the policy is published in English only
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(tr('privacy_policy'))),
